@@ -1,32 +1,62 @@
+/* Discord風デザイン */
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Whitney', Arial, sans-serif;
+  background-color: #23272A;
+  color: #ffffff;
   text-align: center;
-  margin: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #7289DA;
+  padding: 20px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2em;
 }
 
 nav {
-  margin-bottom: 20px;
+  margin: 20px 0;
 }
 
 button {
   margin: 5px;
   padding: 10px 20px;
-  background-color: #7289da;
+  background-color: #7289DA;
   color: white;
   border: none;
+  border-radius: 5px;
   cursor: pointer;
 }
 
 button:hover {
-  background-color: #5b6eae;
+  background-color: #5B6EAE;
 }
 
 .tab {
-  border: 1px solid #ccc;
+  background-color: #2C2F33;
+  border: 1px solid #99AAB5;
   padding: 20px;
   border-radius: 10px;
+  margin: 20px;
+}
+
+footer {
+  background-color: #23272A;
+  padding: 10px;
+  color: #99AAB5;
 }
 
 #profile img {
   border-radius: 50%;
+}
+
+input[type="color"], input[type="url"] {
+  padding: 5px;
+  margin: 10px 0;
+  border: 1px solid #99AAB5;
+  border-radius: 5px;
 }
