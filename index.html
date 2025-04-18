@@ -13,15 +13,19 @@
   <nav>
     <button onclick="showTab('settings')">設定</button>
     <button onclick="showTab('account')">アカウント</button>
-    <button onclick="showTab('register')">登録</button>
+    <button onclick="showTab('register')">Webhook登録</button>
+    <button onclick="showTab('webhookMessage')">Webhookメッセージ</button>
   </nav>
   <main>
+    <!-- 設定タブ -->
     <section id="settings" class="tab">
       <h2>設定タブ</h2>
       <label for="bgColor">背景色を選択:</label>
       <input type="color" id="bgColor" name="bgColor" value="#2C2F33">
       <button onclick="changeBackgroundColor()">背景色を変更</button>
     </section>
+
+    <!-- アカウントタブ -->
     <section id="account" class="tab" style="display: none;">
       <h2>アカウントタブ</h2>
       <button id="loginButton" onclick="loginWithDiscord()">Discordでログイン</button>
@@ -30,14 +34,27 @@
         <p id="username"></p>
       </div>
     </section>
+
+    <!-- Webhook登録タブ -->
     <section id="register" class="tab" style="display: none;">
-      <h2>登録タブ</h2>
+      <h2>Webhook登録</h2>
       <form id="webhookForm">
         <label for="webhookUrl">Webhook URLを入力:</label>
         <input type="url" id="webhookUrl" required>
         <button type="submit">登録</button>
       </form>
       <p id="webhookStatus"></p>
+    </section>
+
+    <!-- Webhookメッセージ送信タブ -->
+    <section id="webhookMessage" class="tab" style="display: none;">
+      <h2>Webhookメッセージ送信</h2>
+      <form id="webhookMessageForm">
+        <label for="messageContent">メッセージ内容:</label>
+        <input type="text" id="messageContent" placeholder="メッセージを入力" required>
+        <button type="button" onclick="sendWebhookMessage()">送信</button>
+      </form>
+      <p id="webhookMessageStatus"></p>
     </section>
   </main>
   <footer>
