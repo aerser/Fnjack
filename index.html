@@ -7,35 +7,42 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Discord連携サイト</h1>
+  <header>
+    <h1>Discord連携サイト</h1>
+  </header>
   <nav>
     <button onclick="showTab('settings')">設定</button>
     <button onclick="showTab('account')">アカウント</button>
     <button onclick="showTab('register')">登録</button>
   </nav>
-  <section id="settings" class="tab">
-    <h2>設定タブ</h2>
-    <label for="bgColor">背景色を選択:</label>
-    <input type="color" id="bgColor" name="bgColor" value="#ffffff">
-    <button onclick="changeBackgroundColor()">背景色を変更</button>
-  </section>
-  <section id="account" class="tab" style="display: none;">
-    <h2>アカウントタブ</h2>
-    <button id="loginButton" onclick="loginWithDiscord()">Discordでログイン</button>
-    <div id="profile" style="display: none;">
-      <img id="avatar" alt="アバター" style="width: 100px; height: 100px;">
-      <p id="username"></p>
-    </div>
-  </section>
-  <section id="register" class="tab" style="display: none;">
-    <h2>登録タブ</h2>
-    <form id="webhookForm">
-      <label for="webhookUrl">Webhook URLを入力:</label>
-      <input type="url" id="webhookUrl" required>
-      <button type="submit">登録</button>
-    </form>
-    <p id="webhookStatus"></p>
-  </section>
+  <main>
+    <section id="settings" class="tab">
+      <h2>設定タブ</h2>
+      <label for="bgColor">背景色を選択:</label>
+      <input type="color" id="bgColor" name="bgColor" value="#2C2F33">
+      <button onclick="changeBackgroundColor()">背景色を変更</button>
+    </section>
+    <section id="account" class="tab" style="display: none;">
+      <h2>アカウントタブ</h2>
+      <button id="loginButton" onclick="loginWithDiscord()">Discordでログイン</button>
+      <div id="profile" style="display: none;">
+        <img id="avatar" alt="アバター" style="width: 100px; height: 100px;">
+        <p id="username"></p>
+      </div>
+    </section>
+    <section id="register" class="tab" style="display: none;">
+      <h2>登録タブ</h2>
+      <form id="webhookForm">
+        <label for="webhookUrl">Webhook URLを入力:</label>
+        <input type="url" id="webhookUrl" required>
+        <button type="submit">登録</button>
+      </form>
+      <p id="webhookStatus"></p>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2025 Discord連携サイト</p>
+  </footer>
   <script src="app.js"></script>
 </body>
 </html>
