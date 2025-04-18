@@ -3,16 +3,39 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Discord Webhook Sender</title>
+  <title>Discord連携サイト</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Discord メッセージ送信</h1>
-  <form id="webhookForm">
-    <input type="url" id="webhookUrl" placeholder="Webhook URLを入力" required>
-    <textarea id="message" placeholder="送信メッセージを入力" required></textarea>
-    <button type="submit">送信</button>
-  </form>
+  <h1>Discord連携サイト</h1>
+  <nav>
+    <button onclick="showTab('settings')">設定</button>
+    <button onclick="showTab('account')">アカウント</button>
+    <button onclick="showTab('register')">登録</button>
+  </nav>
+  <section id="settings" class="tab">
+    <h2>設定タブ</h2>
+    <label for="bgColor">背景色を選択:</label>
+    <input type="color" id="bgColor" name="bgColor" value="#ffffff">
+    <button onclick="changeBackgroundColor()">背景色を変更</button>
+  </section>
+  <section id="account" class="tab" style="display: none;">
+    <h2>アカウントタブ</h2>
+    <button id="loginButton" onclick="loginWithDiscord()">Discordでログイン</button>
+    <div id="profile" style="display: none;">
+      <img id="avatar" alt="アバター" style="width: 100px; height: 100px;">
+      <p id="username"></p>
+    </div>
+  </section>
+  <section id="register" class="tab" style="display: none;">
+    <h2>登録タブ</h2>
+    <form id="webhookForm">
+      <label for="webhookUrl">Webhook URLを入力:</label>
+      <input type="url" id="webhookUrl" required>
+      <button type="submit">登録</button>
+    </form>
+    <p id="webhookStatus"></p>
+  </section>
   <script src="app.js"></script>
 </body>
 </html>
