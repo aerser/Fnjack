@@ -4,29 +4,29 @@ body {
   margin: 20px;
 }
 
-form {
-  display: inline-block;
-  width: 300px;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  background-color: #f9f9f9;
-}
-
-input, textarea, button {
-  width: 100%;
-  margin: 10px 0;
-  padding: 10px;
+nav {
+  margin-bottom: 20px;
 }
 
 button {
+  margin: 5px;
+  padding: 10px 20px;
   background-color: #7289da;
   color: white;
   border: none;
-  border-radius: 5px;
   cursor: pointer;
 }
 
 button:hover {
   background-color: #5b6eae;
+}
+
+.tab {
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+#profile img {
+  border-radius: 50%;
 }
