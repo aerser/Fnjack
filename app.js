@@ -14,7 +14,7 @@ function changeBackgroundColor() {
 
 // Discordログイン (OAuth2)
 async function loginWithDiscord() {
-  const clientId = 'YOUR_DISCORD_CLIENT_ID';
+  const clientId = '1362708781246578698';
   const redirectUri = encodeURIComponent('https://aerser.github.io/Fnjack/'); // ログイン後に戻るURL
   const scope = 'identify';
   const authUrl = `https://discord.com/oauth2/authorize?client_id=${clientId}&redirect_uri=${redirectUri}&response_type=token&scope=${scope}`;
