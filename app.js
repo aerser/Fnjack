@@ -15,7 +15,7 @@ function changeBackgroundColor() {
 // Discordログイン (OAuth2)
 async function loginWithDiscord() {
   const clientId = '1362708781246578698';
-  const redirectUri = encodeURIComponent('https://aerser.github.io/Fnjack/'); // ログイン後に戻るURL
+  const redirectUri = encodeURIComponent('https://aerser.github.io/Fnjack/');
   const scope = 'identify';
   const authUrl = `https://discord.com/oauth2/authorize?client_id=${clientId}&redirect_uri=${redirectUri}&response_type=token&scope=${scope}`;
   window.location.href = authUrl;
@@ -64,3 +64,26 @@ document.getElementById('webhookForm').addEventListener('submit', async (event) 
     document.getElementById('webhookStatus').textContent = 'エラーが発生しました。';
   }
 });
+
+// Webhookメッセージ送信
+async function sendWebhookMessage() {
+  const webhookUrl = document.getElementById('webhookUrl').value;
+  const messageContent = document.getElementById('messageContent').value;
+
+  try {
+    const response = await fetch(webhookUrl, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ content: messageContent }),
+    });
+
+    if (response.ok) {
+      document.getElementById('webhookMessageStatus').textContent = 'メッセージが送信されました！';
+    } else {
+      document.getElementById('webhookMessageStatus').textContent = '送信に失敗しました。URLを確認してください。';
+    }
+  } catch (error) {
+    console.error('エラー:', error);
+    document.getElementById('webhookMessageStatus').textContent = 'エラーが発生しました。';
+  }
+}
